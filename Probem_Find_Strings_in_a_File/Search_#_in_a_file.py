@@ -1,0 +1,11 @@
+filename = 'full_text_small.txt'
+
+
+with open(filename, 'r') as f:
+    for line in f.readlines():
+       if '#' in line:
+           candidates = line.split('#')
+           for c in candidates[1:]:
+               print(c.split(' ')[0].rstrip('\n'))
+f.close()
+
