@@ -3,10 +3,10 @@ import pandas as pd
 import os
 
 #reference https://stackoverflow.com/questions/14262405/loop-through-all-csv-files-in-a-folder
-path = r"C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Python_Workspace\Source Files\*.xlsx"
+path = r"C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Python_Workspace\Problem_Excel_Structure_Validation\Source_excel_files\*.xlsx"
 
 # Create a Pandas Excel writer using XlsxWriter as the engine.
-writer = pd.ExcelWriter(r"C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Python_Workspace\Target Files\pandas_multiple.xlsx")
+writer = pd.ExcelWriter(r"C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Python_Workspace\Problem_Excel_Structure_Validation\pandas_multiple.xlsx")
 
 #sorting the files in directory based on time
 #reference  :https://stackoverflow.com/questions/23430395/glob-search-files-in-date-order
