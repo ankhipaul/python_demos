@@ -45,7 +45,7 @@ for fname in files :
 
             #reference: https://stackoverflow.com/questions/47278064/python-how-to-dynamically-exclude-a-column-name-from-a-list-of-columns-of-a-pa
              #selected_col = set(list(frame.columns)).intersection(set(first_file_col))
-             # Did not user set operation as the order cannot be guaranteed
+             # Did not use set operation as the order cannot be guaranteed
              #reference:https://stackoverflow.com/questions/1653970/does-python-have-an-ordered-set/1653974
              selected_col = pd.Index(frame.columns) &  pd.Index(first_file_col)
 

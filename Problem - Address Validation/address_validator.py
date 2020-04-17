@@ -1,12 +1,13 @@
 import requests
 import csv
+import config
 
 # api-endpoint
 URL = "https://maps.googleapis.com/maps/api/geocode/json"
-f1 = r'C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Source Files\employee_demo.txt'
-f2 = r'C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Target Files\employee_final.txt'
+f1 = r'C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Python_Workspace\Problem - Address Validation\employee_demo.txt'
+f2 = r'C:\Users\H337845\Documents\Laptop to Drive\Studies\Python case studies\Python_Workspace\Problem - Address Validation\employee_final.txt'
 #API key
-key = "AIzaSyDsfDZgHK5hmgpxJFZwIriin1k90rQcZ8k"
+key = config.api_key
 
 with open(f1, 'r') as f:
     with open(f2,'w+') as file:
