@@ -1,5 +1,12 @@
+##############################################################
+#### Written By: ANKHI PAUL                               ####
+#### Written On: 03-MAR-2020                              ####
+#### Modified On 03-MAR-2020                              ####
+#### Objective: AWS Lambda script to read csv file from S3####
+##############################################################
+
 import config
-s3 =  boto3.client('s3')
+s3 =  boto3.client('s3') #boto3 is Python SDK for AWS
 URL = "https://maps.googleapis.com/maps/api/geocode/json"
 key = config.api_key
 bucket = 'pythonusecase'

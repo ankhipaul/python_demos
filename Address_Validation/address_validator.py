@@ -1,3 +1,11 @@
+##############################################################
+#### Written By: ANKHI PAUL                               ####
+#### Written On: 2-MAR-2020                               ####
+#### Modified On 20-MAR-2020                              ####
+#### Objective: To call Google API and validate the       ####
+####     		postal code	of a given file               ####
+##############################################################
+
 import requests
 import csv
 import config
@@ -26,6 +34,7 @@ with open(f1, 'r') as f:
             output = r.json()
             correct_postal_code = output['results'][0]['address_components'][7]['long_name']
             row['Postal_Code'] = correct_postal_code
+			#writing the correct postal code in an output file
             writer.writerow(row)
 
 
