@@ -1,7 +1,17 @@
+"""
+Consumes messages from Kafka topic and writes to a file.
+Run the example:
+    python python_workspace/kafka_python/kafka_python_consumer.py 
+Importing KafkaConsumer and json libraries
+"""
 from kafka import KafkaConsumer
 from json import loads
 import csv
 
+
+"""
+Target File where the data is being written
+"""
 f2 = r'/home/apaul/pythonconsumer.csv'
 
 consumer = KafkaConsumer(
