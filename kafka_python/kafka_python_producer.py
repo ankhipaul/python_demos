@@ -1,3 +1,7 @@
+"""
+Produces messages and publishes into Kafka topic (ankhitest2).
+A series of numbers from 1-100 are being published into the topic.
+"""
 from time import sleep
 from json import dumps
 from kafka import KafkaProducer
