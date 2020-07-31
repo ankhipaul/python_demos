@@ -32,16 +32,22 @@ Sum of the differences = 1+1+2 ,Hence 4
 import numpy as np
 
 def minimumBias(arr):
+    #Sorting the array to bring the numbers closer
     arr.sort()
+
+    #As pairing is required, length of array will always be multiple of 2
     div = int(len(arr) / 2)
 
     cnt = 0
 
+    #Using numpy to split the sorted array
     sub_arr = np.array_split(arr,div)
 
+    #Iterating over each sub-arrays
     for i in list(sub_arr):
-        for j,k in enumerate(i[:-1]):
 
+        #Using enumerate to compare the next element of the array with the current one
+        for j,k in enumerate(i[:-1]):
             diff = i[j+1] - k
             cnt += diff
     return cnt
