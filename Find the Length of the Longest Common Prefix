@@ -1,0 +1,14 @@
+def longestCommonPrefix(self, arr1: List[int], arr2: List[int]) -> int:
+  counter = 0
+  hashset = set()
+  for num1 in arr1:
+      number1 = str(num1)
+      for i in range(len(number1)):
+          hashset.add(number1[:i+1])
+
+  for num2 in arr2:
+      number2 = str(num2)
+      for i in range(len(number2)):
+          if number2[:i+1] in hashset:
+              counter = max(counter, i+ 1)
+  return counter
