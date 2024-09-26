@@ -1,17 +1,13 @@
 #https://leetcode.com/problems/group-anagrams/
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        from collections import Counter
-        anagrams = {}
-        
+        dict = {} 
         for s in strs:
-            # Get the frequency of characters in the string
-            counter_s = tuple(sorted(Counter(s).items()))
-            # If this counter exists in the dictionary, append the word to the group
-            if counter_s in anagrams:
-                anagrams[counter_s].append(s)
+            so ="".join(sorted(s)) 
+            if so not in dict:
+                dict[so] = [s] 
             else:
-                # Otherwise, create a new group
-                anagrams[counter_s] = [s]
+                dict[so].append(s)
+        return dict.values()
         
-        # Collect all the anagram groups
-        return list(anagrams.values())
+
+ 
