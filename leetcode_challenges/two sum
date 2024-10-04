@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        ini_dict = {} #mapping value (key) : index  (value) as hashing of key will reduce time complexity in if statement 
+        for i,j in enumerate(nums):
+            print(i,j)
+            next_int = target - nums[i] 
+            if next_int in ini_dict:
+                return [ini_dict[next_int],i]
+            ini_dict[nums[i]] = i
+        return []
+
