@@ -1,0 +1,14 @@
+#Dont do two sum II with hash map as the input array is sorted, it will take more time to make a hashmap. Use two pointer.
+
+def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        l = 0
+        r = len(numbers) -1
+        while l< r:
+          summation = numbers[l] + numbers[r]
+          if summation > target : #17>9
+            r -=1
+          elif summation < target:
+            l += 1
+          else:
+            return [l+1, r+1]
+        return []
