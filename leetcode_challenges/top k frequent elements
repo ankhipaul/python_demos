@@ -1,0 +1,18 @@
+#https://leetcode.com/problems/top-k-frequent-elements/description/
+ def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    count ={} #frequency
+    maxFreq = 0 
+    for n in nums:  #looping through the items of array and assigning frequency to it
+        count[n] = count.get(n,0) +1
+        maxFreq = max(maxFreq, count[n]) #creating the bucket list
+
+    freq = [[] for i in range(maxFreq + 1)]  #creating the bucket list, adding 1 as list index starts from 0
+
+    for num, fre in count.items():
+        freq[num].append(fre)
+    res = []
+    for i in range(len(freq)-1, 0 ,-1):
+        for n in freq[i]: #Looping through one index of bucket list as each bucket can contain multiple items
+            res.append(n)
+            if len(res) == k:
+                return res
