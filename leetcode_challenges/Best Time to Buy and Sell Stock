@@ -1,0 +1,28 @@
+Solution 1: Lesser code but not that great with time complexity, it is good with memory
+def maxProfit(self, prices: List[int]) -> int:
+        buy_price = prices[0] # at first, minimum price is 1st element
+        maxProfit = 0 # at first, max profit is 0
+
+        for price in prices[1:]:
+            currProfit = price - buy_price #Current profit is selling price - buying price
+            maxProfit = max(maxProfit, currProfit) #Max profit is max oc current and max
+
+            # if the current prices[i] is less than buying price, change buying price to prices[i]
+            buy_price = min(buy_price, price) 
+            
+        return maxProfit
+
+Solution 2: Better with time complexity, it is good with memory
+def maxProfit(self, prices: List[int]) -> int:
+        buy_price = prices[0] # at first, minimum price is 1st element
+        maxProfit = 0 # at first, max profit is 0
+
+        for price in prices[1:]:
+         # if the current prices[i] is less than buying price, change buying price to prices[i]
+            if price < buy_price:
+                buy_price = price
+            else :
+                currProfit = price - buy_price #Current profit is selling price - buying price
+                maxProfit = max(maxProfit, currProfit) #Max profit is max oc current and max 
+            
+        return maxProfit
