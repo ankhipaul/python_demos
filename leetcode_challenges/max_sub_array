@@ -1,0 +1,31 @@
+#https://leetcode.com/problems/maximum-subarray/description/
+#Approach 1: Kadane's Algo( kind of greedy),It iteratively keeps track of the maximum sum ending at the current position, either adding the current element or starting fresh.
+def maxSubArray(self, nums: List[int]) -> int:
+    currMax = nums[0]
+    maxSum = nums[0]
+
+    for num in nums[1:]:
+        currMax = max(num, num + currMax) #kadane's algorithm 
+        #this is a case of dynamic programming, where we keep our result in memory while looping through array once.
+        #At any given point, local_maximum at index i is the maximum of A[i] and the sum of A[i] and local_maximum at index i-1 
+        maxSum = max(maxSum, currMax)
+
+    return maxSum
+
+
+#Approach 2:Greedy algo focuses on making the locally optimal choice at each step—tracking the sum of the current subarray and starting fresh if the sum becomes negative.
+
+def maxSubArray(self, nums: List[int]) -> int:
+        maxSum = float('-inf')
+        currentSum = 0
+        
+        for num in nums:
+            currentSum += num
+            
+            if currentSum > maxSum:
+                maxSum = currentSum
+            
+            if currentSum < 0:
+                currentSum = 0
+        
+        return maxSum
